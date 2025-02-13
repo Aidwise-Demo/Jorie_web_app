@@ -1,0 +1,22 @@
+.app-container {
+    min-height: 100vh;
+    background-color: #f3f4f6;
+}
+
+.content-area {
+    margin-left: 250px;
+    padding: 20px;
+    transition: margin-left 0.3s;
+}
+
+.content-area.sidebar-collapsed {
+    margin-left: 60px;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}

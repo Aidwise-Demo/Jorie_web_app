@@ -1,106 +1,3 @@
-// import React, { useState } from 'react';
-// import LoginForm from './components/LoginForm';
-// import Sidebar from './components/Sidebar';
-// import Dashboard from './components/Dashboard';
-
-// function App() {
-//     const [isLoggedIn, setIsLoggedIn] = useState(false);
-//     const [currentView, setCurrentView] = useState('dashboard');
-//     const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
-
-//     const handleLogin = () => {
-//         setIsLoggedIn(true);
-//     };
-
-//     const handleOptionSelect = (option) => {
-//         if (option === 'patient-persona') {
-//             setCurrentView('patient-listing');
-//         }
-//     };
-
-//     const handleNavigate = (page) => {
-//         setCurrentView(page);
-//     };
-
-//     if (!isLoggedIn) {
-//         return <LoginForm onLogin={handleLogin} />;
-//     }
-
-//     return (
-//         <div className="app-container" data-name="app-container">
-//             {currentView !== 'dashboard' && (
-//                 <Sidebar
-//                     isCollapsed={sidebarCollapsed}
-//                     onToggle={() => setSidebarCollapsed(!sidebarCollapsed)}
-//                     activePage={currentView}
-//                     onNavigate={handleNavigate}
-//                 />
-//             )}
-            
-//             <main className={`content-area ${sidebarCollapsed ? 'sidebar-collapsed' : ''}`} data-name="main-content">
-//                 {currentView === 'dashboard' && (
-//                     <Dashboard onOptionSelect={handleOptionSelect} />
-//                 )}
-//                 {/* {currentView === 'patient-listing' && (
-//                     <div className="card">
-//                         <h2 className="text-2xl font-bold mb-4">Patient Listing</h2>
-//                         <img 
-//                             src="https://app.trickle.so/storage/public/images/usr_0c129b7d60008001/ed365722-23c3-449c-b102-f6e17f64eaef.png"
-//                             alt="Patient Listing"
-//                             className="w-full"
-//                         />
-//                     </div>
-//                 )} */}
-//                 {currentView === 'patient-listing' && (
-//     <div className="card">
-//         <h2 className="text-2xl font-bold mb-4">Patient Listing</h2>
-//         <iframe 
-//             title="Patient_persona_dashboard" 
-//             width="1140" 
-//             height="541.25" 
-//             src="https://app.powerbi.com/reportEmbed?reportId=f6c006f2-d67b-4ce4-b8f6-f9c5433918eb&autoAuth=true&ctid=39d814ab-a56f-478d-8b14-f4f1e99cfe1b" 
-//             frameBorder="0" 
-//             allowFullScreen
-//         ></iframe>
-//     </div>
-// )}
-
-//                 {currentView === 'patient-journey' && (
-//                     <div className="card">
-//                         <h2 className="text-2xl font-bold mb-4">Patient Journey</h2>
-//                         <img 
-//                             src="https://app.trickle.so/storage/public/images/usr_0c129b7d60008001/7f5ea4a5-97f6-4fe9-9d12-dee6a6c745ed.png"
-//                             alt="Patient Journey"
-//                             className="w-full"
-//                         />
-//                     </div>
-//                 )}
-//                 {currentView === 'cluster' && (
-//                     <div className="card">
-//                         <h2 className="text-2xl font-bold mb-4">Cluster</h2>
-//                         <img 
-//                             src="https://app.trickle.so/storage/public/images/usr_0c129b7d60008001/29d41c53-f0e2-4203-ad5e-4bf817e4d4c8.png"
-//                             alt="Cluster"
-//                             className="w-full"
-//                         />
-//                     </div>
-//                 )}
-//                 {currentView === 'cluster-protocol' && (
-//                     <div className="card">
-//                         <h2 className="text-2xl font-bold mb-4">Cluster Protocol</h2>
-//                         <img 
-//                             src="https://app.trickle.so/storage/public/images/usr_0c129b7d60008001/d0188cdc-8637-4488-a5b8-f1003d581e55.png"
-//                             alt="Cluster Protocol"
-//                             className="w-full"
-//                         />
-//                     </div>
-//                 )}
-//             </main>
-//         </div>
-//     );
-// }
-
-// export default App;
 import React, { useState } from "react";
 import LoginForm from "./components/LoginForm";
 import Sidebar from "./components/Sidebar";
@@ -109,7 +6,7 @@ import Dashboard from "./components/Dashboard";
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [currentView, setCurrentView] = useState("dashboard");
-    const [showSidebar, setShowSidebar] = useState(false); // Sidebar state
+    const [showSidebar, setShowSidebar] = useState(false);
     const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
     const handleLogin = () => {
@@ -118,9 +15,11 @@ function App() {
 
     const handleOptionSelect = (option) => {
         if (option === "patient-persona") {
-            setShowSidebar(true); // Show sidebar after selecting Patient Persona
+            setShowSidebar(true);
+            setCurrentView("patient-listing");
+        } else {
+            setCurrentView(option);
         }
-        setCurrentView(option);
     };
 
     const handleNavigate = (page) => {
@@ -133,7 +32,7 @@ function App() {
 
     return (
         <div className="flex h-screen">
-            {/* Show Sidebar only after selecting Patient Persona */}
+            {/* Sidebar - Only visible after selecting Patient Persona */}
             {showSidebar && (
                 <Sidebar
                     isCollapsed={sidebarCollapsed}
@@ -149,18 +48,16 @@ function App() {
                     showSidebar ? (sidebarCollapsed ? "ml-16" : "ml-64") : "ml-0"
                 }`}
             >
-                {/* Dashboard */}
                 {currentView === "dashboard" && (
                     <Dashboard onOptionSelect={handleOptionSelect} />
                 )}
 
-                {/* Patient Listing with Power BI Embed */}
                 {currentView === "patient-listing" && (
                     <div className="card">
                         <h2 className="text-2xl font-bold mb-4">Patient Listing</h2>
                         <iframe
                             title="Patient_persona_dashboard"
-                            width={sidebarCollapsed ? "100%" : "85%"}
+                            width="100%"
                             height="600"
                             src="https://app.powerbi.com/reportEmbed?reportId=f6c006f2-d67b-4ce4-b8f6-f9c5433918eb&autoAuth=true&ctid=39d814ab-a56f-478d-8b14-f4f1e99cfe1b"
                             frameBorder="0"
@@ -169,7 +66,6 @@ function App() {
                     </div>
                 )}
 
-                {/* Patient Journey */}
                 {currentView === "patient-journey" && (
                     <div className="card">
                         <h2 className="text-2xl font-bold mb-4">Patient Journey</h2>
@@ -181,7 +77,6 @@ function App() {
                     </div>
                 )}
 
-                {/* Cluster */}
                 {currentView === "cluster" && (
                     <div className="card">
                         <h2 className="text-2xl font-bold mb-4">Cluster</h2>
@@ -193,7 +88,6 @@ function App() {
                     </div>
                 )}
 
-                {/* Cluster Protocol */}
                 {currentView === "cluster-protocol" && (
                     <div className="card">
                         <h2 className="text-2xl font-bold mb-4">Cluster Protocol</h2>

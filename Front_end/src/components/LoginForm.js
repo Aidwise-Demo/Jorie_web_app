@@ -46,8 +46,14 @@ function LoginForm({ onLogin }) {
             <div className="login-content">
                 <div className="login-info">
                     <div className="login-info-content">
-                        <h1>Welcome to Jorie</h1>
-                        <p>Your Partner in Ensuring Uninterrupted Healthcare Operations</p>
+                        <h1 style={{ textAlign: 'center' }}>Welcome to Jorie's <br /> AI Healthcare Platform</h1>
+
+                        <img src="https://i.ibb.co/TM8y3LrB/65eba45832b2446f99809ae9-Nov-1163-2.png" alt="Descriptive Image" width="500" height="500" />
+                      
+
+                        <p style={{ textAlign: 'center' }}>     Your Partner in<br />     <strong>  Ensuring Uninterrupted Healthcare Operations</strong>    </p>
+
+
                         <ul className="feature-list">
                             <li><i className="fas fa-chart-line"></i> Advanced analytics for healthcare operations</li>
                             <li><i className="fas fa-user-md"></i> Comprehensive patient management</li>

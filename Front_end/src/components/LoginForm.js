@@ -46,7 +46,7 @@ function LoginForm({ onLogin }) {
             <div className="login-content">
                 <div className="login-info">
                     <div className="login-info-content">
-                        <h1 style={{ textAlign: 'center' }}>Welcome to Jorie's <br /> AI Healthcare Platform</h1>
+                        <h1 style={{ textAlign: 'center', lineHeight: 1.25 }}>Welcome to Jorie's <br /> AI Healthcare Platform</h1>
 
                         <img src="https://i.ibb.co/TM8y3LrB/65eba45832b2446f99809ae9-Nov-1163-2.png" alt="Descriptive Image" width="500" height="500" />
                       

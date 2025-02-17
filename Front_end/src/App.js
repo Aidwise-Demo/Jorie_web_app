@@ -62,7 +62,7 @@ function App() {
                         <iframe
                             title="Patient_persona_dashboard"
                             width="100%"
-                            height="600"
+                            height="900"
                             src="https://app.powerbi.com/reportEmbed?reportId=f6c006f2-d67b-4ce4-b8f6-f9c5433918eb&autoAuth=true&ctid=39d814ab-a56f-478d-8b14-f4f1e99cfe1b"
                             frameBorder="0"
                             allowFullScreen

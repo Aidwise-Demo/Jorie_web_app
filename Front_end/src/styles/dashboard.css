@@ -78,6 +78,7 @@
     background: white;
     overflow: hidden;
     position: relative;
+    border: 2px solid #bbcae9;
 }
 
 .option-card::before {

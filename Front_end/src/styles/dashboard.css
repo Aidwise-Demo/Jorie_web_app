@@ -1,9 +1,76 @@
+/* Dashboard container */
 .dashboard-container {
     padding: 40px;
     max-width: 1400px;
     margin: 0 auto;
+    margin-top: 80px; /* Added margin to avoid overlap with the navbar */
 }
 
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-left .navbar-logo {
+    height: 50px; /* Adjust as needed */
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-menu-button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    color: #333;
+}
+
+.user-menu-button i {
+    color: #2563eb;
+}
+
+.logout-button {
+    background-color: #ff4d4f;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    transition: background 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #d9363e;
+}
+
+/* Option card styles */
 .option-card {
     cursor: pointer;
     transition: all 0.3s ease;
@@ -62,3 +129,26 @@
     color: #666;
     line-height: 1.6;
 }
+
+/* Ensure navbar does not overlap content */
+body {
+    margin: 0;
+    padding: 0;
+}
+.navbar-left {
+    background: #1e40af;
+    padding: 10px; /* Space between image and container */
+    border-radius: 12px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px; /* Increased height to account for padding */
+    width: 140px; /* Increased width for padding effect */
+}
+
+.navbar-logo {
+    height: 60px; /* Set a fixed height for consistency */
+    width: auto;  /* Maintain aspect ratio */
+}
+

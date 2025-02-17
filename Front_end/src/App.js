@@ -24,7 +24,11 @@ function App() {
 
     const handleNavigate = (page) => {
         setCurrentView(page);
+        if (page === "dashboard") {
+            setShowSidebar(false); // Hide sidebar when navigating back to the dashboard
+        }
     };
+
 
     if (!isLoggedIn) {
         return <LoginForm onLogin={handleLogin} />;

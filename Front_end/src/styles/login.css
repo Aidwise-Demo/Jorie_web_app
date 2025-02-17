@@ -138,6 +138,7 @@
     max-width: 120px;
     height: auto;
 } 
+
 .login-container {
     background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
     min-height: 100vh;

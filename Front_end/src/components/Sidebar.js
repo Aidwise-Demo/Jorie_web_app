@@ -6,7 +6,10 @@ function Sidebar({ isCollapsed, onToggle, activePage, onNavigate }) {
         { id: 'patient-listing', title: 'Patient Listing', icon: 'fa-list' },
         { id: 'patient-journey', title: 'Patient Journey', icon: 'fa-route' },
         { id: 'cluster', title: 'Cluster', icon: 'fa-network-wired' },
-        { id: 'cluster-protocol', title: 'Cluster Protocol', icon: 'fa-clipboard-list' }
+        { id: 'cluster-protocol', title: 'Cluster Protocol', icon: 'fa-clipboard-list' },
+        { id: 'programs', title: 'Programs', icon: 'fa-tasks' },
+{ id: 'campaigns', title: 'Campaigns', icon: 'fa-bullhorn' }
+
     ];
 
     return (
@@ -20,6 +23,7 @@ function Sidebar({ isCollapsed, onToggle, activePage, onNavigate }) {
                     src="https://app.trickle.so/storage/public/images/usr_0c129b7d60008001/0dd06bf3-7b58-4e62-b8f0-4b1c42d45fd9.png"
                     alt="Jorie Logo"
                     className={`mx-auto ${isCollapsed ? 'w-8' : 'w-16'}`}
+                    onClick={() => onNavigate('dashboard')}
                 />
             </div>
 

@@ -63,7 +63,7 @@ function App() {
                             title="Patient_persona_dashboard"
                             width="100%"
                             height="900"
-                            src="https://app.powerbi.com/reportEmbed?reportId=f6c006f2-d67b-4ce4-b8f6-f9c5433918eb&autoAuth=true&ctid=39d814ab-a56f-478d-8b14-f4f1e99cfe1b"
+                            src="https://app.powerbi.com/reportEmbed?reportId=e711c02c-fda7-499a-8437-dc9d968e176a&autoAuth=true&ctid=39d814ab-a56f-478d-8b14-f4f1e99cfe1b"
                             frameBorder="0"
                             allowFullScreen
                         ></iframe>
@@ -73,33 +73,42 @@ function App() {
                 {currentView === "patient-journey" && (
                     <div className="card">
                         <h2 className="text-2xl font-bold mb-4">Patient Journey</h2>
-                        <img
-                            src="https://app.trickle.so/storage/public/images/usr_0c129b7d60008001/7f5ea4a5-97f6-4fe9-9d12-dee6a6c745ed.png"
-                            alt="Patient Journey"
-                            className="w-full"
-                        />
+                        <iframe
+                            title="Patient Journey"
+                            width="100%"
+                            height="900"
+                            src="https://app.powerbi.com/reportEmbed?reportId=d2cd67e9-3dd8-4ef1-a5fa-4acfdf344f1e&autoAuth=true&ctid=39d814ab-a56f-478d-8b14-f4f1e99cfe1b"
+                            frameBorder="0"
+                            allowFullScreen
+                        ></iframe>
                     </div>
                 )}
 
                 {currentView === "cluster" && (
                     <div className="card">
-                        <h2 className="text-2xl font-bold mb-4">Cluster</h2>
-                        <img
-                            src="https://app.trickle.so/storage/public/images/usr_0c129b7d60008001/29d41c53-f0e2-4203-ad5e-4bf817e4d4c8.png"
-                            alt="Cluster"
-                            className="w-full"
-                        />
+                        <h2 className="text-2xl font-bold mb-4">Persona Comparison</h2>
+                        <iframe
+                            title="Cluster Protocol"
+                            width="100%"
+                            height="900"
+                            src="https://app.powerbi.com/reportEmbed?reportId=8e965572-7d95-408b-8c50-f1d380182039&autoAuth=true&ctid=39d814ab-a56f-478d-8b14-f4f1e99cfe1b"
+                            frameBorder="0"
+                            allowFullScreen
+                        ></iframe>
                     </div>
                 )}
 
                 {currentView === "cluster-protocol" && (
                     <div className="card">
-                        <h2 className="text-2xl font-bold mb-4">Cluster Protocol</h2>
-                        <img
-                            src="https://app.trickle.so/storage/public/images/usr_0c129b7d60008001/d0188cdc-8637-4488-a5b8-f1003d581e55.png"
-                            alt="Cluster Protocol"
-                            className="w-full"
-                        />
+                        <h2 className="text-2xl font-bold mb-4">Persona Protocol</h2>
+                        <iframe
+                            title="Cluster Protocol"
+                            width="100%"
+                            height="900"
+                            src="https://app.powerbi.com/reportEmbed?reportId=fe973fc3-cd2b-4442-b3eb-d9c0441bdc11&autoAuth=true&ctid=39d814ab-a56f-478d-8b14-f4f1e99cfe1b"
+                            frameBorder="0"
+                            allowFullScreen
+                        ></iframe>
                     </div>
                 )}
             </main>
